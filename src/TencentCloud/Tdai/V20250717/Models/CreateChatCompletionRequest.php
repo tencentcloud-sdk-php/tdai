@@ -22,6 +22,8 @@ use TencentCloud\Common\AbstractModel;
  *
  * @method boolean getIsHidden() 获取是否隐藏
  * @method void setIsHidden(boolean $IsHidden) 设置是否隐藏
+ * @method boolean getIsChatHidden() 获取是否隐藏会话
+ * @method void setIsChatHidden(boolean $IsChatHidden) 设置是否隐藏会话
  */
 class CreateChatCompletionRequest extends AbstractModel
 {
@@ -31,7 +33,13 @@ class CreateChatCompletionRequest extends AbstractModel
     public $IsHidden;
 
     /**
+     * @var boolean 是否隐藏会话
+     */
+    public $IsChatHidden;
+
+    /**
      * @param boolean $IsHidden 是否隐藏
+     * @param boolean $IsChatHidden 是否隐藏会话
      */
     function __construct()
     {
@@ -48,6 +56,10 @@ class CreateChatCompletionRequest extends AbstractModel
         }
         if (array_key_exists("IsHidden",$param) and $param["IsHidden"] !== null) {
             $this->IsHidden = $param["IsHidden"];
+        }
+
+        if (array_key_exists("IsChatHidden",$param) and $param["IsChatHidden"] !== null) {
+            $this->IsChatHidden = $param["IsChatHidden"];
         }
     }
 }
